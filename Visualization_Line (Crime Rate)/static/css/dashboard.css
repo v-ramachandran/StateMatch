@@ -1,0 +1,97 @@
+body {
+  font-family:“Lucida Grande”, sans-serif;
+  font-size:10px;
+}
+
+#header {
+  margin-top:10px;
+}
+
+#header-text {
+  color:#999999;
+}
+
+.dashboard-widget {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.x line, .y line {
+  stroke:#ccc;
+  shape-rendering:crispEdges;
+}
+
+path {
+  stroke:#000;
+  stroke-width:1.5px;
+  fill:none;
+}
+
+h3 {
+  text-align:center;
+}
+
+img {
+  height:225px;
+  width:275px;
+}
+
+.chart rect {
+  stroke: white;
+  fill: lightblue;
+}
+
+.node circle {
+  fill: red;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+#five {
+  margin-top: 5px;
+}
+
+map {
+  width: 960px;
+  height: 500px;
+}
+
+#states path, #state-centroids circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+#state-centroids circle {
+  fill: lightgreen;
+  fill-opacity: .8;
+}
+
+.rule line {
+  stroke: #eee;
+  shape-rendering: crispEdges;
+}
+
+.rule line.axis {
+  stroke: #000;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+circle.line {
+  fill: #fff;
+}

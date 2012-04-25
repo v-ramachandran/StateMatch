@@ -1,4 +1,4 @@
-fips,State,Year,Male_le,Female_le,White male life expectancy (years),White female life expectancy (years),Black male life expectancy (years),Black female life expectancy (years),Male life expectancy change 1987 to 2009 (years),Female life expectancy change 1987 to 2009 (years)
+fips,State,Year,Male_le,Female_le,a,b,c,d,e,f
 1000,ALABAMA,1987,69.6,77.5,70.8,78.8,65.1,73.7,2.9,0.7
 1000,ALABAMA,1988,69.4,77.2,71.0,78.4,64.0,73.6,2.9,0.7
 1000,ALABAMA,1989,69.5,77.5,71.0,78.7,64.4,73.9,2.9,0.7

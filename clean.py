@@ -15,8 +15,8 @@ def clean(df):
     d5 = d4.drop(['e'], axis=1)
     d6 = d5.drop(['f'], axis=1)
     d7 = d6.drop(['fips'], axis=1)
-    d8 = d7[d7["Year"] > 2003]
-    d9 = d8[d8["Year"] < 2009]
+    d8 = d7[d7["Year"] > 1989]
+    d9 = d8[d8["Year"] < 2010]
     d9.to_csv("./test.csv",index=False)
 
 def main(*args):

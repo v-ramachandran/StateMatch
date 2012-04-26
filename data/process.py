@@ -8,5 +8,5 @@ df = read_csv("lifeExpectancy(1990-2009).csv")
 print "Loaded Data."
 df = df[df['Year']==2009]
 print "Filtered by Year."
-df.to_csv("cleanedLifeExpectancy.csv", index=False)
+df.to_csv("2009LifeExpectancy.csv", index=False)
 print "Outputted Data."

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<link href='http://fonts.googleapis.com/css?family=Mate+SC|Marmelad' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Exo' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="./static/css/selector.css" type="text/css">
+<script type="text/javascript" src="./static/js/selector.js"></script>
+
+<script >
+var States = {};
+States['CA'] = [8,5,3];
+States['NY'] = [2,4,1];
+States['WA'] = [2,2,3];
+States['AZ'] = [4,6,7];
+States['MN'] = [3,5,8];
+</script>
+<body>
+<table>
+<tr>
+<td>Crime</td>
+<td>Unemployment</td>
+<td>Life Expectancy</td>
+</tr>
+<tr>
+<td>
+<select id="cr" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+
+<td>
+<select id="un" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+
+<td>
+<select id="bl" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+</tr>
+
+</table>
+<button type="button" onclick="process()" name="" value="" class="css3button">Go</button>
+<div class="resultDiv">
+<ul>
+  <li id="one">
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>    
+      <span id="value"></span> 
+    </a>
+  </li>
+  <li id="two" >
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>
+      <span id="value"></span>
+    </a>
+  </li>
+  <li id="three">
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>
+      <span id="value"></span>
+    </a>
+  </li>
+</ul>
+</div>
+<div id="d3">
+
+</div>
+</body>
+</html>

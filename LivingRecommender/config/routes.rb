@@ -1,4 +1,5 @@
 LivingRecommender::Application.routes.draw do
+   match 'musicmatch/InternetUsage' => 'musicmatch#InternetUsage'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

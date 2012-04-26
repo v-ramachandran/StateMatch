@@ -4,7 +4,7 @@ function getCSVhandler(state){
           .map(function(el) {return el.State});
           
     d3.csv("", function handleCSV(csv) {
-        var points = csv.filter(function(el) { return el.State == state })
+        var points = csv.filter(function(el) { return el.State == st })
                   .map(function(el) { return parseFloat(el.male_le)});      
     
         var p = 20,

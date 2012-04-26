@@ -1,11 +1,11 @@
 function getCSVhandler(state){
   d3.csv("./stateMappingStripped.csv", function handleCSV(csv) {
     var st = csv.filter(function(el) {return el.code == state})
-          .map(function(el) {return el.State;});
+          .map(function(el) {return el.State});
           
     d3.csv("", function handleCSV(csv) {
         var points = csv.filter(function(el) { return el.State == state })
-                  .map(function(el) { return parseFloat(el.male_le); });      
+                  .map(function(el) { return parseFloat(el.male_le)});      
     
         var p = 20,
             w = 275 - 2 * p,
@@ -131,6 +131,6 @@ function getCSVhandler(state){
           .attr("y", 28)
           .attr("font-size", "8.5px")
           .text("Libertarian")
-    }
-  }
+    });
+  });
 }

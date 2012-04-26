@@ -25,16 +25,40 @@ font-size : 25px;
 }
 .resultDiv{
 position : fixed;
-left : 574px;
+left : 323px;
 top : 238px;
-width:320px;
+width:760px;
 }
-li:hover{
-color:#ff0000;
-
+/*
+.resultDiv li:hover{
+ color: #ff0000;
 }
-ul{
-
+*/
+.resultDiv p#rec{
+ font-family: 'Mate SC', serif;
+ /*font-family: 'Berkshire Swash', cursive;*/
+ /*font-family: 'Fredericka the Great', cursive;*/
+ font-weight: 400;
+ font-size : 45px;
+ position : relative;
+ left : 100px;
+}
+.resultDiv li{
+ display : inline;
+ margin-left: 0;
+ padding: 3px 15px;
+ border-left: 1px solid #bbbbbb;
+ list-style: none;
+ display: inline;
+}
+.resultDiv li.first{
+  margin-left: 0;
+  border-left: none;
+  list-style: none;
+  display: inline;
+}
+.resultDiv ul{
+ display : inline;
 }
 .resultDiv ul li a {text-decoration:none; color:#000000}
 .resultDiv ul li a:hover { color:#cccccc}

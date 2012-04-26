@@ -1,8 +1,45 @@
+var states = []
+var unemp = []
+var crime = []
+var lifeExp = []
+var States = {}
+
+var mapping = {"Alabama":"AL", "Alaska":"AK", "Arizona":"AZ", "Arkansas":"AR", "California":"CA", "Colorado":"CO", "Connecticut":"CT", "Delaware":"DE", "District of Columbia":"DC", "Florida":"FL", "Georgia":"GA", "Hawaii":"HI", "Idaho":"ID", "Illinois":"IL", "Indiana":"IN", "Iowa":"IA", "Kansas":"KS", "Kentucky":"KY", "Louisiana":"LA", "Maine":"ME", "Maryland":"MD", "Massachusetts":"MA", "Michigan":"MI", "Minnesota":"MN", "Mississippi":"MS", "Missouri":"MO", "Montana":"MT", "Nebraska":"NE", "Nevada":"NV", "New Hampshire":"NH", "New Jersey":"NJ", "New Mexico":"NM", "New York":"NY", "North Carolina":"NC", "North Dakota":"ND", "Ohio":"OH", "Oklahoma":"OK", "Oregon":"OR", "Pennsylvania":"PA", "Rhode Island":"RI", "South Carolina":"SC", "South Dakota":"SD", "Tennessee":"TN", "Texas":"TX", "Utah":"UT", "Vermont":"VT", "Virginia":"VA", "Washington":"WA", "West Virginia":"WV", "Wisconsin":"WI", "Wyoming":"WY"}
+function onLoadFunc(){
+  d3.csv('../../../data/unempFINAL_NORMALIZED.csv',function handleCSV(csv){  
+    states = csv.map(function(el){
+      return el.State
+    });
+    unemp = csv.map(function(el){
+      return parseFloat(el.Unemp)
+    }); 
+    LifeExp = csv.map(function(el){
+      return parseFloat(el.LifeExp)
+    }); 
+    crime = csv.map(function(el){
+      return parseFloat(el.Crime)
+    });
+ 
+  });
+}
+
+function test() {
+  //console.log(crime[9]);	 
+  for(i = 0; i < states.length; i++)
+  {
+    //States[mapping[states[i]]] = [ crime[i], unemp[i], LifeExp[i]];
+    States[states[i]] = [ crime[i], unemp[i], LifeExp[i]];
+  }
+  //console.log(crime[0]);
+  //console.log(mapping[states[50]]); 
+  //console.log("Hello World!.");
+}
+
 function stateExpand(obj)
 {
-  //window.open("file:////home/hokadiri/Desktop/cs194/finalProject/display.html?url=me", "_blank");
+  window.open("http://localhost:8000/Demo/secondPage.html?"+mapping[obj.childNodes(1).innerHTML], "_blank");
   //alert(obj.childNodes(1).innerHTML);
-  document.getElementById("d3").innerHTML = obj.childNodes(1).innerHTML;
+  //document.getElementById("d3").innerHTML = obj.childNodes(1).innerHTML;
 }
 function process()
 {
@@ -33,27 +70,29 @@ function process()
   var i = 1;
   for(key in stateRes)
   {
+    console.log(key);
+    console.log(stateRes[key]);
     switch(i)
     {
       case 1:
         document.getElementById("one").childNodes(1).childNodes(1).innerHTML = key  ;
-        document.getElementById("one").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];    
+        //document.getElementById("one").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];    
 	i++;
         break;
       case 2:
         document.getElementById("two").childNodes(1).childNodes(1).innerHTML = key;
-        document.getElementById("two").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
+        //document.getElementById("two").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
 	i++;
         break;
       case 3: 
         document.getElementById("three").childNodes(1).childNodes(1).innerHTML = key;
-        document.getElementById("three").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
+        //document.getElementById("three").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
 	i++;
         break;
    
     }
   }
-  stateExpand(document.getElementById("one").childNodes(1));
+  //stateExpand(document.getElementById("one").childNodes(1));
   //s.childNodes(1).innerHTML = "HUSSEIN";  
 }
 

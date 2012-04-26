@@ -2,12 +2,11 @@
 <html>
 
 <head>
-  <%= javascript_include_tag "application" %>
-  <%= css_include_tag "application" %>
-  <script type="text/javascript" src="/assets/javascripts/d3/d3.js"></script>
-  <script type="text/javascript" src="/assets/d3/d3.v2.js"></script>
-  <script type="text/javascript" src="/assets/d3/d3.csv.js"></script>
-  <script type="text/javascript" src="/assets/d3/d3.layout.js"></script>
+  <%= javascript_tag "science/science.js" %>
+  <script type="text/javascript" src="/javascripts/d3/d3.js"></script>
+  <script type="text/javascript" src="/javascripts/d3/d3.v2.js"></script>
+  <script type="text/javascript" src="/javascripts/d3/d3.csv.js"></script>
+  <script type="text/javascript" src="/javascripts/d3/d3.layout.js"></script>
   <script type="text/javascript" src="/assets/science/science.js"></script>
   <script type="text/javascript" src="/assets/science/science.lin.js"></script>
   <script type="text/javascript" src="/assets/science/science.stats.js"></script>

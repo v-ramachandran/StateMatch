@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+<link href='http://fonts.googleapis.com/css?family=Mate+SC|Marmelad' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Exo' rel='stylesheet' type='text/css'>
+<script >
+var States = {};
+States['CA'] = [8,5,3];
+States['NY'] = [2,4,1];
+States['WA'] = [2,2,3];
+States['AZ'] = [4,6,7];
+States['MN'] = [3,5,8];
+
+function stateExpand(obj)
+{
+  //window.open("file:////home/hokadiri/Desktop/cs194/finalProject/display.html?url=me", "_blank");
+  //alert(obj.childNodes(1).innerHTML);
+  document.getElementById("d3").innerHTML = obj.childNodes(1).innerHTML;
+}
+function process()
+{
+  var stateRes = {};
+  var cr = document.getElementById("cr");
+  var crVal = parseInt(cr.options[cr.selectedIndex].value);
+  
+  var bl = document.getElementById("bl");
+  var blVal = parseInt(bl.options[bl.selectedIndex].value);    
+  
+  var un = document.getElementById("un");
+  var unVal = parseInt(un.options[un.selectedIndex].value);  
+
+  var coefArr = [crVal, blVal, unVal];
+  //alert(coefArr[0]);
+  for(key in States)
+  {
+    var resultArr = States[key]; 
+    var sum = 0;
+    for(i = 0; i < 3; i++)
+    {
+      sum +=  coefArr[i] * resultArr[i]; 
+    }
+    stateRes[key] = sum; 
+  }
+  stateRes = stateSort(stateRes);
+  var str = "";
+  var i = 1;
+  for(key in stateRes)
+  {
+    switch(i)
+    {
+      case 1:
+        document.getElementById("one").childNodes(1).childNodes(1).innerHTML = key  ;
+        document.getElementById("one").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];    
+	i++;
+        break;
+      case 2:
+        document.getElementById("two").childNodes(1).childNodes(1).innerHTML = key;
+        document.getElementById("two").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
+	i++;
+        break;
+      case 3: 
+        document.getElementById("three").childNodes(1).childNodes(1).innerHTML = key;
+        document.getElementById("three").childNodes(1).childNodes(3).innerHTML = " - " + stateRes[key];  
+	i++;
+        break;
+   
+    }
+  }
+  stateExpand(document.getElementById("one").childNodes(1));
+  //s.childNodes(1).innerHTML = "HUSSEIN";  
+}
+
+function stateSort(States)
+{
+  var sortable = [];
+  var Result = {};
+  for (var state in States)
+  {
+    sortable.push([state, States[state]]);
+  }
+  
+  sortable.sort(function(a,b) { return a[1] - b[1] });
+  sortable = sortable.slice(0,3);
+  for(i = 0; i < sortable.length; i++)
+  {
+    Result[sortable[i][0]] = sortable[i][1];
+  }
+  
+  return Result;
+}
+</script>
+<style>
+#d3{
+position : fixed;
+top : 352px;
+width:1252px;
+height: 490px;
+border: .1em dotted #900; 
+
+}
+span{
+   font-family: 'Mate SC', serif;
+   font-weight: 400;
+}
+#value{
+font-family: 'Fredericka the Great', cursive;
+font-size : 19px;
+}
+#state{
+font-size : 25px;
+
+}
+.resultDiv{
+position : fixed;
+left : 574px;
+top : 238px;
+width:320px;
+}
+li:hover{
+color:#ff0000;
+
+}
+ul{
+
+}
+.resultDiv ul li a {text-decoration:none; color:#000000}
+.resultDiv ul li a:hover { color:#cccccc}
+/*#list4 { width:320px; font-family:Georgia, Times, serif; font-size:15px; }*/
+/*
+.resultDiv ul { list-style: none; }
+.resultDiv ul li { }
+.resultDiv ul li a { display:block; text-decoration:none; color:#000000; background-color:#FFFFFF; line-height:30px;
+  border-bottom-style:solid; border-bottom-width:1px; border-bottom-color:#CCCCCC; padding-left:10px; cursor:pointer; }
+.resultDiv ul li a:hover { color:#FFFFFF; background-image:url(hover.png); background-repeat:repeat-x; }
+*/
+/*.resultDiv ul li a strong { margin-right:10px; }*/
+
+option,.styled-select{
+   background: transparent;
+   width: 149px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+   text-align: center;
+   font-family: 'Mate SC', serif;
+}
+button.css3button:hover {
+
+	color: #ffffff;
+	background: -moz-linear-gradient(
+		top,
+		#2dcc65 0%,
+		#000000);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#2dcc65),
+		to(#000000));
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 1px rgba(255,255,255,0.7);
+}
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#f0f0f0 0%,
+		#b8b8b8 25%,
+		#6b6b6b 75%,
+		#424242);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#f0f0f0),
+		color-stop(0.25, #b8b8b8),
+		color-stop(0.75, #6b6b6b),
+		to(#424242));
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 3px solid #171717;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 10px rgba(087,087,087,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 10px rgba(087,087,087,0.7);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+	right: 593px;
+	position: fixed;
+	top: 175px;
+
+}
+
+table {
+    overflow:hidden;
+    border:1px solid #d3d3d3;
+    background:#fefefe;
+    width:7%;
+    margin:5% auto 0;
+    -moz-border-radius:5px; /* FF1+ */
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius:5px;
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+th, td {padding:10px 28px 10px; text-align:center; }
+th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
+td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+tr.odd-row td {background:#f6f6f6;    font-family: 'Mate SC', serif;}
+td.first, th.first {text-align:left}
+td.last {border-right:none;}
+
+ul
+{
+    list-style-type: none;
+}
+</style>
+<body>
+<table>
+<tr>
+<td>Crime</td>
+<td>Unemployment</td>
+<td>Life Expectancy</td>
+</tr>
+<tr>
+<td>
+<select id="cr" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+
+<td>
+<select id="un" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+
+<td>
+<select id="bl" class="styled-select">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+</tr>
+
+</table>
+<button type="button" onclick="process()" name="" value="" class="css3button">Go</button>
+<div class="resultDiv">
+<ul>
+  <li id="one">
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>    
+      <span id="value"></span> 
+    </a>
+  </li>
+  <li id="two" >
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>
+      <span id="value"></span>
+    </a>
+  </li>
+  <li id="three">
+    <a href="#" onclick="stateExpand(this)">
+      <span id="state"></span>
+      <span id="value"></span>
+    </a>
+  </li>
+</ul>
+</div>
+<div id="d3">
+
+</div>
+</body>
+</html>

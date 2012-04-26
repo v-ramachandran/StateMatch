@@ -28,7 +28,7 @@
 
   <div id="selector-wrapper">
       <div id="title-frame"> 
-        <span id="title"> Select your Preferences </span>
+        <span id="title"> Choose your Attributes </span>
       </div>
       
       <div class="desc-frame" id="directions">

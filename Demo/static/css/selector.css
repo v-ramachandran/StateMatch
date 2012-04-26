@@ -3,7 +3,7 @@ background: url("../img/back.png") repeat scroll 0 0 transparent;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 90px;
 }
 b.header {
   display: block;
@@ -380,10 +380,18 @@ font-size : 25px;
 
 }
 .resultDiv{
-position : fixed;
-left : 323px;
-top : 238px;
-width:760px;
+position : relative;
+left : 480px;
+width:645px;
+ border-radius: 4px 4px 4px 4px;
+  border-color: gray;
+  border-width: 3px;
+  box-shadow: 0 2px 2px 2px #c2c2c2;
+  -moz-box-shadow: 0 2px 2px 2px 0#c2c2c2;
+  -webkit-box-shadow: 0 2px 2px 2px 0#c2c2c2;
+  background: white;
+  vertical-align:middle;
+
 }
 /*
 .resultDiv li:hover{

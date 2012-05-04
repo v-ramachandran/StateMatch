@@ -38,7 +38,7 @@ function test() {
 
 function stateExpand(obj)
 {
-  window.open("http://localhost:8000/Demo/secondPage.html?"+mapping[obj.childNodes(1).innerHTML], "_blank");
+  window.open("http://localhost:8000/vis.html?state="+obj.childNodes(1).innerHTML, "_blank");
   //alert(obj.childNodes(1).innerHTML);
   //document.getElementById("d3").innerHTML = obj.childNodes(1).innerHTML;
 }

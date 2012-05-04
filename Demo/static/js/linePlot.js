@@ -8,7 +8,7 @@ d3.csv("preprocessed-data/lifeExpectancy(1990-2009).csv", function handleCSV(csv
       console.log(points);
       var p = 20,
           w = 960 - 2 * p,
-          h = 350 - 2 * p,
+          h = 280 - 2 * p,
           r = 2.0,
           labelpad = -10,
           m = ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009"],
@@ -102,12 +102,12 @@ d3.csv("preprocessed-data/UnemploymentStates.csv", function handleCSV(csv) {
       console.log(points);
       var p = 20,
           w = 960 - 2 * p,
-          h = 350 - 2 * p,
+          h = 280 - 2 * p,
           r = 2.0,
           labelpad = -10,
           m = ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010"],
-          ymax = 20,
-          ymin = 0;
+          ymax = 11,
+          ymin = 1;
       
       var x = d3.scale.ordinal()
                       .domain(m);
@@ -278,6 +278,4 @@ d3.csv("preprocessed-data/CrimeRate1990-2009.csv", function handleCSV(csv) {
 });
 
 }
-drawLine3("California");
-drawLine2("California");
-drawLine("California");
+

@@ -15,13 +15,38 @@
   <title>The Best State to Live Based On Crime, Unemployment, and Life Expectancy</title>
 </head>
 
+<script>
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+var first = getUrlVars()["state"];
+var temp = first.indexOf("%20");
+
+if (temp >= 0) {
+
+   a=first.substring(0,temp);
+   b=first.substring(temp+3);
+   first = a+" "+b;
+}
+
+drawLine(first);
+drawLine2(first);
+//drawLine3(first);
+
+</script>
+
 <body>
   <!-- Container for Blueprint Grid -->
   <div class="container">
 
     <!-- Header -->
-    <div class="span-24 last" id="header">
-      <h3 id="header-text"> Life Expectancy (in Years) </h3>
+    <div class="span-24 last" id="header1">
+      <h3 id="header-text1"> Life Expectancy (in Years) </h3>
     </div>
     <hr/>
 
@@ -31,8 +56,8 @@
     </div>
 
     <!-- Header -->
-    <div class="span-24 last" id="header">
-      <h3 id="header-text"> Unemployment (Fraction over Time) </h3>
+    <div class="span-24 last" id="header2">
+      <h3 id="header-text2"> Unemployment (Percent over Time) </h3>
     </div>
     <hr/>
 
@@ -43,9 +68,9 @@
 <br/>
 <br/>
 
-    <!-- Header -->
-    <div class="span-24 last" id="header">
-      <h3 id="header-text"> Crime Incidents (Millions) </h3>
+    <!--
+    <div class="span-24 last" id="header3">
+      <h3 id="header-text3"> Crime Incidents (Millions over Time) </h3>
     </div>
     <hr/>
 
@@ -53,5 +78,14 @@
       <div class="dashboard-widget" id="line3">
       </div>
     </div>
+    -->
+    
   </div>
+  <script>
+  console.log(document.getElementById("header-text1").innerHTML);
+document.getElementById("header-text1").innerHTML = first+" "+document.getElementById("header-text").innerHTML;
+document.getElementById("header-text2").innerHTML= first+" "+document.getElementById("header-text2").innerHTML;
+//document.getElementById("header-text3").innerHTML= first+" "+document.getElementById("header-text3").innerHTML;
+
+  </script>
 </body>
